@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pokemonApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pokemons</title>
+
+    <!-- jQuerry -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+
+    <!-- CNR for Angular - googled for links -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+
+    <!-- bootstrap -->
+    <link rel="text/javascript" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+
+    <!-- javascript -->
+    <script src="/public/scripts/app.js"></script>
+    <script src="/public/scripts/controllers/PokemonsIndexController.js"></script>
+
+    <!-- CSS (but includes bootstrap) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/styles/styles.css">
+
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>Welcome to our Poki Page</h1>
+    </div>
+
+    <!-- link -->
+    <div ng-view></div>
+  </body>
+
+  </html>
