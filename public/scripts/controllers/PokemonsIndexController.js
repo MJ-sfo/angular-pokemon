@@ -2,10 +2,10 @@ angular
   .module('pokemonApp')
   .controller('pokemonsShowController', pokemonsShowController);
 
-// pokemonsShowController.$inject = ['$http'];
-pokemonsShowController.$inject=['$http', '$routeParams', '$location'];
-// function pokemonsShowController ($http) {
-function pokemonsShowController($http, $routeParams, $location) {
+pokemonsShowController.$inject = ['$http'];
+// pokemonsShowController.$inject=['$http', '$routeParams', '$location'];
+function pokemonsShowController ($http) {
+// function pokemonsShowController($http, $routeParams, $location) {
   var vm = this;
   var pokemonId = $routeParams.id;
 
