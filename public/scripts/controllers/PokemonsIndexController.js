@@ -1,21 +1,24 @@
 angular
   .module('pokemonApp')
-  .controller('PokemonsIndexController', PokemonsIndexController);
+  .controller('pokemonsShowController', pokemonsShowController);
 
-PokemonsIndexController.$inject = ['$http'];
-function PokemonsIndexController ($http) {
+// pokemonsShowController.$inject = ['$http'];
+pokemonsShowController.$inject=['$http', '$routeParams', '$location'];
+// function pokemonsShowController ($http) {
+function pokemonsShowController($http, $routeParams, $location) {
   var vm = this;
-
+  var pokemonId = $routeParams.id;
 
   $http({
     method: 'GET',
-    url: 'https://super-crud.herokuapp.com/pokemon'
-  }).then(function successCallback(response) {
-    vm.pokemons = response.data.pokemons;  // responsee is object/data/array of pokemons/object of individual pokemons
-    console.log("response to GET in PoemonsIndexController");
-    console.log(response);
-  }, function errorCallback(err) {
-    console.log('There was an error getting the data', err);
+    url: 'https://super-crud.herokuapp.com/pokemon'+ pokemonId
+
+  }).then(function successCallback(response, onError) {
+    vm.pokemons = response.data;  // responsee is object/data/array of pokemons/object of individual pokemons
+    console.log("response to GET in pokemonsShowController");
+    console.log('here\'s the data for pokemon', pokemonId, ':', response.data);
+  }, function errorCallback(onError) {
+    console.log('There was an error getting the data', onError);
   });
 
   // vm.createPokemon = function () {

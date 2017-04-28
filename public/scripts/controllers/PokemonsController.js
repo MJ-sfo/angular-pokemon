@@ -1,5 +1,5 @@
 angular
-  .module('pokemonApp', ['ngRoute'])
+  .module('pokemonApp')  //  or  .module('pokemonApp', ['ngRoute'])
   .controller('PokemonsController', PokemonsController);
 
 PokemonsController.$inject = ['$http'];
