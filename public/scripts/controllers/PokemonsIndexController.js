@@ -2,19 +2,25 @@ angular
   .module('pokemonApp')
   .controller('pokemonsShowController', pokemonsShowController);
 
-pokemonsShowController.$inject = ['$http'];
+pokemonsShowController.$inject = ['$http', '$routeParams'];
 // pokemonsShowController.$inject=['$http', '$routeParams', '$location'];
-function pokemonsShowController ($http) {
+function pokemonsShowController ($http, $routeParams) {
 // function pokemonsShowController($http, $routeParams, $location) {
   var vm = this;
   var pokemonId = $routeParams.id;
-
+  // var pokemonId = $route.current.params;
+  console.log("pokemonId is : ", pokemonId);
+// console.log("vm on indiv page is: ", vm);
+// console.log(vm.poki.pokemons);
   $http({
     method: 'GET',
-    url: 'https://super-crud.herokuapp.com/pokemon'+ pokemonId
+    url: 'https://super-crud.herokuapp.com/pokemon/'+ pokemonId
 
   }).then(function successCallback(response, onError) {
-    vm.pokemons = response.data;  // responsee is object/data/array of pokemons/object of individual pokemons
+  // vm.poki = response.data;
+  vm.test = "sanity check for vm";
+  console.log('response is: ', response);
+    // vm.pokemons = response.data;  // responsee is object/data/array of pokemons/object of individual pokemons
     console.log("response to GET in pokemonsShowController");
     console.log('here\'s the data for pokemon', pokemonId, ':', response.data);
   }, function errorCallback(onError) {

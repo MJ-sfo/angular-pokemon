@@ -8,7 +8,6 @@ angular
   .controller('PokemonsIndexController', PokemonsIndexController);
 
   config.$inject = ['$routeProvider', '$locationProvider'];
-
   function config ($routeProvider, $locationProvider) {
     console.log('function working');
     $routeProvider
@@ -20,7 +19,7 @@ angular
       .when('/pokemons/:id', {
         templateUrl: '../../templates/pokemons/show.html',
         controllerAs: 'pokemonsShowCtrl',
-        controller: 'PokemonsController'
+        controller: 'pokemonsShowController'
       })
     .otherwise({
       redirectTo: '/'
@@ -36,7 +35,7 @@ angular
 PokemonsIndexController.$inject = ['$http'];
   function PokemonsIndexController ($http){
     var vm = this;
-    console.log('from PokemonsIndexController: ', PokemonsIndexController);
+    // console.log('from PokemonsIndexController: ', PokemonsIndexController);
 
     $http({
       method: 'GET',
@@ -44,8 +43,8 @@ PokemonsIndexController.$inject = ['$http'];
     }).then(function successCallback(response) {
       // successCallback is first function - can be called anything
       vm.poki = response.data;
-      vm.test = "sanity check for vm";
-      console.log( vm.poki.pokemons);
+      // vm.test = "sanity check for vm";
+      // console.log( vm.poki.pokemons);
     }, function errorCallback(response) {
       //  could call errorCallback - as long as second function
       console.log('There was an error getting the data', response);
