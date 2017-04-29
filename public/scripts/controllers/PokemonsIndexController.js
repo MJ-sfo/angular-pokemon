@@ -3,9 +3,7 @@ angular
   .controller('pokemonsShowController', pokemonsShowController);
 
 pokemonsShowController.$inject = ['$http', '$routeParams'];
-// pokemonsShowController.$inject=['$http', '$routeParams', '$location'];
 function pokemonsShowController ($http, $routeParams) {
-// function pokemonsShowController($http, $routeParams, $location) {
   var vm = this;
   var pokemonId = $routeParams.id;
   console.log("pokemonId is : ", pokemonId);
@@ -15,9 +13,6 @@ function pokemonsShowController ($http, $routeParams) {
     url: 'https://super-crud.herokuapp.com/pokemon/'+ pokemonId
 
   }).then(function successCallback(response, onError) {
-  // vm.poki = response.data;
-  // vm.test = "sanity check for vm";
-  // console.log('response is: ', response);
     vm.onepoki = response.data;
     console.log('here\'s the data for pokemon', pokemonId, ':', vm.onepoki);
   }, function errorCallback(onError) {

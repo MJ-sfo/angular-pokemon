@@ -3,7 +3,6 @@ console.log('app.js started');
 // if remember right,  ['ngRoute'] creates new module.  shouldn't be here, or website won't work
 angular
   .module('pokemonApp', ['ngRoute'])
-    // .module('pokemonApp')
   .config(config)
   .controller('PokemonsIndexController', PokemonsIndexController);
 
@@ -35,7 +34,6 @@ angular
 PokemonsIndexController.$inject = ['$http'];
   function PokemonsIndexController ($http){
     var vm = this;
-    // console.log('from PokemonsIndexController: ', PokemonsIndexController);
 
     $http({
       method: 'GET',
