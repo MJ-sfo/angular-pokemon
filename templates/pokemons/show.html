@@ -1,6 +1,17 @@
+<div class="container">
+<!-- container for repeated blocks for each pokeimon (a website within original website) -->
+{{pokemonsShowCtrl.onepoki.name}} test show template
+ <div  class="row">
+   <div class="col-md-10 col-md-offset-1">
+     <div class="panel panel-default">
+       <div class="panel-body">
+         <div class='row'>
+
+           <span>this is second page!</span>
 <div class="col-md-3 col-xs-12 thumbnail">
   <!-- <img src="images/800x800.png" alt="pokemon image"> -->
-  <img src={{pokemon.image}} alt="pokemon image">
+  <h1>{{pokemonsShowController.onepoki}}</h1>
+  <img src={{pokemonsShowController.onepoki.image}} alt="pokemon image">
 </div>
 
 <div class="col-md-9 col-xs-12">
@@ -9,7 +20,7 @@
       <h4 class='inline-header'>Pokemon Name:</h4>
       <!-- <a ng-href="albums/{{album._id}}">{{album.name}}</a> -->
       <!-- <span ng-hide="editing"><a ng-href="pokemons/{{pokemon._id}}">{{pokemon.name}}</a></span> -->
-      <span ng-hide="editing"><a ng-href="pokemons/{{pokemon._id}}">{{pokemon.name}}</a></span>
+      <span ng-hide="editing"><p>{{pokemonsShowCtrl.onepoki.name}}</p></span>
       <input ng-show="editing" ng-model="pokemon.name" type="text" class="form-control input-md">
     </li>
 
@@ -25,4 +36,10 @@
       <input ng-show="editing" ng-model="pokemon.evolves_from" type="text" class="form-control input-md">
     </li>
   </ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
